@@ -1,3 +1,5 @@
+import 'package:booking_app/screen/welcome/welcome_screen.dart';
+import 'package:booking_app/splash/splash_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,9 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(),
-      home: const Text('Hello World'),
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData(fontFamily: 'Rubik'),
+        home: const SplashView(),
+        debugShowCheckedModeBanner: false,
+        routes: {
+          '/welcome': (context) => const WelcomeScreen(),
+        });
   }
 }
