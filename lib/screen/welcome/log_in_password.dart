@@ -68,12 +68,17 @@ class _LogInPasswordState extends State<LogInPassword> {
                         style: FontSelect.kBtnText20White),
                   ),
                 ),
-                const Text(
-                  'Forget Password?',
-                  style: TextStyle(
-                      color: ColorSelect.kColorSecondary,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/forgetpassword');
+                  },
+                  child: const Text(
+                    'Forget Password?',
+                    style: TextStyle(
+                        color: ColorSelect.kColorSecondary,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500),
+                  ),
                 ),
               ]),
         ),
