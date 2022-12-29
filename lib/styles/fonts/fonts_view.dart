@@ -35,27 +35,27 @@ class FontSelect {
     fontWeight: FontWeight.w500,
   );
 
-  // SUBTITULOS
+  // BODY TEXT
 
-  static const kSubtitle18 = TextStyle(
+  static const kBody18 = TextStyle(
     color: ColorSelect.kTextPrimary,
     fontSize: 18,
     fontWeight: FontWeight.w500,
   );
 
-  static const kSubtitle16 = TextStyle(
-    color: ColorSelect.kTextSecondary,
+  static const kBody16 = TextStyle(
+    color: ColorSelect.kTextPrimary,
     fontSize: 16,
     fontWeight: FontWeight.w500,
   );
 
-  static const kSubtitle14 = TextStyle(
+  static const kBody14 = TextStyle(
     color: ColorSelect.kTextPrimary,
     fontSize: 14,
     fontWeight: FontWeight.w500,
   );
 
-  static const kSubtitle12 = TextStyle(
+  static const kBody12 = TextStyle(
     color: ColorSelect.kTextPrimary,
     fontSize: 12,
     fontWeight: FontWeight.w500,
@@ -63,10 +63,46 @@ class FontSelect {
 
   // POPPINS
 
-  // TEXTO DE BOTONES
-  static const kBtnText20 = TextStyle(
+  // SUBTITULOS
+  static const kSubtitle18 = TextStyle(
     fontFamily: 'Poppins',
     color: ColorSelect.kTextPrimary,
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+  );
+
+  static const kSubtitle16 = TextStyle(
+    fontFamily: 'Poppins',
+    color: ColorSelect.kTextSecondary,
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+  );
+
+  static const kSubtitle14 = TextStyle(
+    fontFamily: 'Poppins',
+    color: ColorSelect.kTextPrimary,
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+  );
+
+  static const kSubtitle12 = TextStyle(
+    fontFamily: 'Poppins',
+    color: ColorSelect.kTextPrimary,
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+  );
+
+  // TEXTO DE BOTONES
+  static const kBtnText20Black = TextStyle(
+    fontFamily: 'Poppins',
+    color: ColorSelect.kTextPrimary,
+    fontSize: 20,
+    fontWeight: FontWeight.w500,
+  );
+
+  static const kBtnText20White = TextStyle(
+    fontFamily: 'Poppins',
+    color: ColorSelect.kBackground,
     fontSize: 20,
     fontWeight: FontWeight.w500,
   );
