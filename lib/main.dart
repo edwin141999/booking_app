@@ -1,3 +1,4 @@
+import 'package:booking_app/screen/welcome/log_in_password.dart';
 import 'package:booking_app/screen/welcome/welcome_screen.dart';
 import 'package:booking_app/splash/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routes: {
           '/welcome': (context) => const WelcomeScreen(),
+          '/password': (context) => const LogInPassword(),
         });
   }
 }

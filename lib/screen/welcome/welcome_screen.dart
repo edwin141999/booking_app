@@ -1,4 +1,4 @@
-import 'package:booking_app/screen/welcome/log_in.dart';
+import 'package:booking_app/screen/welcome/log_in_email.dart';
 import 'package:booking_app/screen/welcome/onboarding.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +17,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       controller: controller,
       children: [
         OnBoarding(),
-        const LogIn(),
+        LogInEmail(controller: controller),
       ],
     );
   }

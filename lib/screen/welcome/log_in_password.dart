@@ -2,8 +2,15 @@ import 'package:booking_app/styles/colors/colors_view.dart';
 import 'package:booking_app/styles/fonts/fonts_view.dart';
 import 'package:flutter/material.dart';
 
-class LogIn extends StatelessWidget {
-  const LogIn({Key? key}) : super(key: key);
+class LogInPassword extends StatefulWidget {
+  const LogInPassword({Key? key}) : super(key: key);
+
+  @override
+  State<LogInPassword> createState() => _LogInPasswordState();
+}
+
+class _LogInPasswordState extends State<LogInPassword> {
+  bool visiblePass = false;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +26,9 @@ class LogIn extends StatelessWidget {
                 border: Border.all(
                     color: ColorSelect.kTextSecondary.withOpacity(.5))),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
               icon: const Icon(Icons.arrow_back_ios,
                   color: ColorSelect.kTextSecondary),
               padding: const EdgeInsets.only(left: 10),
@@ -38,12 +47,26 @@ class LogIn extends StatelessWidget {
               children: [
                 Container(
                     alignment: Alignment.centerLeft,
-                    child: const Text("What's Your Email?",
+                    child: const Text("Enter Password!",
                         style: FontSelect.kTitle26)),
-                const TextField(
-                    keyboardType: TextInputType.emailAddress,
+                TextField(
+                    obscureText: !visiblePass,
+                    enableSuggestions: false,
                     decoration: InputDecoration(
-                        labelText: 'Email', labelStyle: FontSelect.kSubtitle16),
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            visiblePass = !visiblePass;
+                          });
+                        },
+                        icon: Icon(
+                          visiblePass ? Icons.visibility : Icons.visibility_off,
+                          color: ColorSelect.kTextPrimary,
+                        ),
+                      ),
+                      labelText: 'Password',
+                      labelStyle: FontSelect.kSubtitle16,
+                    ),
                     style: FontSelect.kSubtitle18),
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.8,
@@ -60,19 +83,13 @@ class LogIn extends StatelessWidget {
                         style: FontSelect.kBtnText20White),
                   ),
                 ),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Text("Don't have account? ",
-                          style: FontSelect.kSubtitle16),
-                      Text(
-                        'Sign Up',
-                        style: TextStyle(
-                            color: ColorSelect.kColorSecondary,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500),
-                      )
-                    ]),
+                const Text(
+                  'Forget Password?',
+                  style: TextStyle(
+                      color: ColorSelect.kColorSecondary,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
+                ),
               ]),
         ),
       ),
