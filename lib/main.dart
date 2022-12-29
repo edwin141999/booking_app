@@ -1,7 +1,7 @@
 import 'package:booking_app/screen/welcome/forget_password.dart';
-import 'package:booking_app/screen/welcome/log_in_email.dart';
 import 'package:booking_app/screen/welcome/log_in_password.dart';
 import 'package:booking_app/screen/welcome/sign_up.dart';
+import 'package:booking_app/screen/welcome/verification.dart';
 import 'package:booking_app/screen/welcome/welcome_screen.dart';
 import 'package:booking_app/splash/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
           '/password': (context) => const LogInPassword(),
           '/signup':(context) => const SignUp(),
           '/forgetpassword': (context) => const ForgetPassword(),
+          '/verification': (context) => const Verification(),
         });
   }
 }
