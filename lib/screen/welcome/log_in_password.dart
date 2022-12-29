@@ -1,5 +1,6 @@
 import 'package:booking_app/styles/colors/colors_view.dart';
 import 'package:booking_app/styles/fonts/fonts_view.dart';
+import 'package:booking_app/widget/button_back.dart';
 import 'package:flutter/material.dart';
 
 class LogInPassword extends StatefulWidget {
@@ -18,23 +19,7 @@ class _LogInPasswordState extends State<LogInPassword> {
       appBar: AppBar(
         backgroundColor: ColorSelect.kBackground,
         elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.all(5.0),
-          child: Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(100),
-                border: Border.all(
-                    color: ColorSelect.kTextSecondary.withOpacity(.5))),
-            child: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: const Icon(Icons.arrow_back_ios,
-                  color: ColorSelect.kTextSecondary),
-              padding: const EdgeInsets.only(left: 10),
-            ),
-          ),
-        ),
+        leading: const BtnBack(),
       ),
       backgroundColor: ColorSelect.kBackground,
       body: SafeArea(

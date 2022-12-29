@@ -67,19 +67,22 @@ class LogInEmail extends StatelessWidget {
                         style: FontSelect.kBtnText20White),
                   ),
                 ),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Text("Don't have account? ",
-                          style: FontSelect.kSubtitle16),
-                      Text(
-                        'Sign Up',
-                        style: TextStyle(
-                            color: ColorSelect.kColorSecondary,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500),
-                      )
-                    ]),
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  const Text("Don't have account? ",
+                      style: FontSelect.kSubtitle16),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/signup');
+                    },
+                    child: const Text(
+                      'Sign Up',
+                      style: TextStyle(
+                          color: ColorSelect.kColorSecondary,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  )
+                ]),
               ]),
         ),
       ),
