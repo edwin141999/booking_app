@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:booking_app/services/google_sign_in.dart';
 import 'package:booking_app/styles/colors/colors_view.dart';
 import 'package:booking_app/styles/fonts/fonts_view.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +43,19 @@ class OnBoarding extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.8,
                     child: OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        ServiceGoogle().sigInWithGoogle().then(
+                          (value) {
+                            Navigator.pushNamed(context, '/home',
+                                arguments: value,);
+                          },
+                        ).catchError(
+                          (error) {
+                            log('ERROR');
+                            log(error.toString());
+                          },
+                        );
+                      },
                       style: styleBtn,
                       child: SizedBox(
                         height: 55,
