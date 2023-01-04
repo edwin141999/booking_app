@@ -141,9 +141,14 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 children: [
                   const Text('Popular Packages', style: FontSelect.kTitle22),
                   const Spacer(),
-                  Text('See all',
-                      style: FontSelect.kSubtitle18.copyWith(
-                          color: Colors.blue, fontWeight: FontWeight.w700)),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/popular');
+                    },
+                    child: Text('See all',
+                        style: FontSelect.kSubtitle18.copyWith(
+                            color: Colors.blue, fontWeight: FontWeight.w700)),
+                  ),
                 ],
               ),
               const SizedBox(height: 20),

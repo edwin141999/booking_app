@@ -19,7 +19,8 @@ class _LogInPasswordState extends State<LogInPassword> {
       appBar: AppBar(
         backgroundColor: ColorSelect.kBackground,
         elevation: 0,
-        leading: const BtnBack(),
+        title: const BtnBack(),
+        automaticallyImplyLeading: false,
       ),
       backgroundColor: ColorSelect.kBackground,
       body: SafeArea(

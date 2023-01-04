@@ -12,25 +12,23 @@ class LogInEmail extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: ColorSelect.kBackground,
         elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.all(5.0),
-          child: Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(100),
-                border: Border.all(
-                    color: ColorSelect.kTextSecondary.withOpacity(.5))),
-            child: IconButton(
-              onPressed: () {
-                controller.animateToPage(0,
-                    duration: const Duration(milliseconds: 500),
-                    curve: Curves.easeIn);
-              },
-              icon: const Icon(Icons.arrow_back_ios,
-                  color: ColorSelect.kTextSecondary),
-              padding: const EdgeInsets.only(left: 10),
-            ),
+        title: Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(100),
+              border: Border.all(
+                  color: ColorSelect.kTextSecondary.withOpacity(.5))),
+          child: IconButton(
+            onPressed: () {
+              controller.animateToPage(0,
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeIn);
+            },
+            icon: const Icon(Icons.arrow_back_ios,
+                color: ColorSelect.kTextSecondary),
+            padding: const EdgeInsets.only(left: 10),
           ),
         ),
+        automaticallyImplyLeading: false,
       ),
       backgroundColor: ColorSelect.kBackground,
       body: SafeArea(

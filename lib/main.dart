@@ -1,5 +1,6 @@
 import 'package:booking_app/firebase_options.dart';
 import 'package:booking_app/screen/home/home_screen.dart';
+import 'package:booking_app/screen/popular/popular_screen.dart';
 import 'package:booking_app/screen/welcome/forget_password.dart';
 import 'package:booking_app/screen/welcome/log_in_password.dart';
 import 'package:booking_app/screen/welcome/sign_up.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
           '/forgetpassword': (context) => const ForgetPassword(),
           '/verification': (context) => const Verification(),
           '/home': (context) => const HomeScreen(),
+          '/popular': (context) => const PopularScreen(),
         });
   }
 }

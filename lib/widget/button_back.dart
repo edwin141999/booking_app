@@ -6,21 +6,18 @@ class BtnBack extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(5.0),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(100),
-          border: Border.all(color: ColorSelect.kTextSecondary.withOpacity(.5)),
-        ),
-        child: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: const Icon(Icons.arrow_back_ios,
-              color: ColorSelect.kTextSecondary),
-          padding: const EdgeInsets.only(left: 10),
-        ),
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(100),
+        border: Border.all(color: ColorSelect.kTextSecondary.withOpacity(.5)),
+      ),
+      child: IconButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        icon:
+            const Icon(Icons.arrow_back_ios, color: ColorSelect.kTextSecondary),
+        padding: const EdgeInsets.only(left: 10),
       ),
     );
   }

@@ -12,7 +12,8 @@ class Verification extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: const BtnBack(),
+        title: const BtnBack(),
+        automaticallyImplyLeading: false,
       ),
       backgroundColor: Colors.white,
       body: SafeArea(
