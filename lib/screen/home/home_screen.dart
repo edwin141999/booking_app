@@ -1,6 +1,7 @@
 import 'package:booking_app/styles/colors/colors_view.dart';
 import 'package:booking_app/styles/fonts/fonts_view.dart';
 import 'package:booking_app/widget/card_package.dart';
+import 'package:booking_app/widget/container_image.dart';
 import 'package:booking_app/widget/top_package.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -28,24 +29,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: GestureDetector(
-              onTap: () {
-                FirebaseAuth.instance.signOut();
-                Navigator.pushNamed(context, '/welcome');
-              },
-              child: Container(
-                width: 40,
-                height: 40,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                      image: NetworkImage(userData.user!.photoURL!)),
-                ),
-              ),
-            ),
-          ),
+          ContainerImage(userData: userData),
         ],
         title: SizedBox(
           width: MediaQuery.of(context).size.width * 0.8,
@@ -143,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   const Spacer(),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, '/popular');
+                      Navigator.pushNamed(context, '/popular',arguments: userData);
                     },
                     child: Text('See all',
                         style: FontSelect.kSubtitle18.copyWith(
