@@ -45,7 +45,12 @@ class PopularScreen extends StatelessWidget {
                 separatorBuilder: (BuildContext context, int index) =>
                     const SizedBox(height: 10),
                 itemBuilder: (BuildContext context, int index) {
-                  return const CardPackage(width: double.infinity);
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/details');
+                    },
+                    child: const CardPackage(width: double.infinity),
+                  );
                 },
               ),
             ),

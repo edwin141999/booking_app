@@ -49,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         minimum: const EdgeInsets.symmetric(horizontal: 20),
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
               const SizedBox(height: 20),
@@ -114,22 +115,27 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   const Text('Popular Packages', style: FontSelect.kTitle22),
                   const Spacer(),
-                  GestureDetector(
-                    onTap: () {
+                  TextButton(
+                    style: TextButton.styleFrom(
+                        padding: const EdgeInsets.all(0),
+                        elevation: 0,
+                        side: const BorderSide(color: Colors.transparent)),
+                    onPressed: () {
                       Navigator.pushNamed(context, '/popular',
                           arguments: userData);
                     },
                     child: Text('See all',
                         style: FontSelect.kSubtitle18.copyWith(
                             color: Colors.blue, fontWeight: FontWeight.w700)),
-                  ),
+                  )
                 ],
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               SizedBox(
                 width: double.infinity,
                 height: 200,
                 child: PageView.builder(
+                  physics: const BouncingScrollPhysics(),
                   itemCount: 3,
                   pageSnapping: true,
                   controller: _pageController,

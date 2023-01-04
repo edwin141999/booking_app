@@ -2,10 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class ContainerImage extends StatelessWidget {
-  const ContainerImage({
-    Key? key,
-    required this.userData,
-  }) : super(key: key);
+  const ContainerImage({Key? key, required this.userData}) : super(key: key);
 
   final UserCredential userData;
 
@@ -18,14 +15,9 @@ class ContainerImage extends StatelessWidget {
           FirebaseAuth.instance.signOut();
           Navigator.pushNamed(context, '/welcome');
         },
-        child: Container(
-          width: 40,
-          height: 40,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            image:
-                DecorationImage(image: NetworkImage(userData.user!.photoURL!)),
-          ),
+        child: CircleAvatar(
+          radius: 20,
+          backgroundImage: NetworkImage(userData.user!.photoURL!),
         ),
       ),
     );

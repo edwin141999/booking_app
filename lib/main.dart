@@ -1,11 +1,12 @@
 import 'package:booking_app/firebase_options.dart';
-import 'package:booking_app/screen/home/home_screen.dart';
-import 'package:booking_app/screen/popular/popular_screen.dart';
-import 'package:booking_app/screen/welcome/forget_password.dart';
-import 'package:booking_app/screen/welcome/log_in_password.dart';
-import 'package:booking_app/screen/welcome/sign_up.dart';
-import 'package:booking_app/screen/welcome/verification.dart';
-import 'package:booking_app/screen/welcome/welcome_screen.dart';
+import 'package:booking_app/screen/forget_password_screen.dart';
+import 'package:booking_app/screen/home_screen.dart';
+import 'package:booking_app/screen/package_details_screen.dart';
+import 'package:booking_app/screen/password_screen.dart';
+import 'package:booking_app/screen/popular_screen.dart';
+import 'package:booking_app/screen/sign_up_screen.dart';
+import 'package:booking_app/screen/verification_screen.dart';
+import 'package:booking_app/screen/welcome_screen.dart';
 import 'package:booking_app/splash/splash_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -28,12 +29,13 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routes: {
           '/welcome': (context) => const WelcomeScreen(),
-          '/password': (context) => const LogInPassword(),
-          '/signup': (context) => const SignUp(),
-          '/forgetpassword': (context) => const ForgetPassword(),
-          '/verification': (context) => const Verification(),
+          '/password': (context) => const PasswordScreen(),
+          '/signup': (context) => const SignUpScreen(),
+          '/forgetpassword': (context) => const ForgetPasswordScreen(),
+          '/verification': (context) => const VerificationScreen(),
           '/home': (context) => const HomeScreen(),
           '/popular': (context) => const PopularScreen(),
+          '/details': (context) => const PackageDetailsScreen(),
         });
   }
 }

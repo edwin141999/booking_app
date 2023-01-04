@@ -12,6 +12,7 @@ class Packages extends StatelessWidget {
       height: 240,
       child: ListView.separated(
         itemCount: 3,
+        physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         separatorBuilder: (BuildContext context, int index) {
           return const SizedBox(width: 25);

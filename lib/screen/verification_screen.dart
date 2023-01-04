@@ -3,8 +3,8 @@ import 'package:booking_app/styles/fonts/fonts_view.dart';
 import 'package:booking_app/widgets/button_back.dart';
 import 'package:flutter/material.dart';
 
-class Verification extends StatelessWidget {
-  const Verification({Key? key}) : super(key: key);
+class VerificationScreen extends StatelessWidget {
+  const VerificationScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -2,9 +2,7 @@ import 'package:booking_app/styles/fonts/fonts_view.dart';
 import 'package:flutter/material.dart';
 
 class CardTopPackage extends StatelessWidget {
-  const CardTopPackage({
-    Key? key,
-  }) : super(key: key);
+  const CardTopPackage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,17 +15,13 @@ class CardTopPackage extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Container(
-            height: 80,
-            width: 80,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              image: const DecorationImage(
-                image: NetworkImage(
-                    'https://www.cinqueterre.eu.com/images/stories/web/manarola/manarola-cinque-terre-1200.jpg'),
-                fit: BoxFit.cover,
-              ),
-            ),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(30),
+            child: Image.network(
+                'https://www.cinqueterre.eu.com/images/stories/web/manarola/manarola-cinque-terre-1200.jpg',
+                height: 80,
+                width: 80,
+                fit: BoxFit.cover),
           ),
           const SizedBox(width: 15),
           Column(

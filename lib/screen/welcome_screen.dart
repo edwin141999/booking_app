@@ -1,5 +1,5 @@
-import 'package:booking_app/screen/welcome/log_in_email.dart';
-import 'package:booking_app/screen/welcome/onboarding.dart';
+import 'package:booking_app/screen/email_screen.dart';
+import 'package:booking_app/screen/social_screen.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -11,8 +11,8 @@ class WelcomeScreen extends StatelessWidget {
     return PageView(
       controller: controller,
       children: [
-        OnBoarding(),
-        LogInEmail(controller: controller),
+        SocialScreen(),
+        EmailScreen(controller: controller),
       ],
     );
   }

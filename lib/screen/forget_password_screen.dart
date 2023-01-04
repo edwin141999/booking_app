@@ -3,8 +3,8 @@ import 'package:booking_app/styles/fonts/fonts_view.dart';
 import 'package:booking_app/widgets/button_back.dart';
 import 'package:flutter/material.dart';
 
-class ForgetPassword extends StatelessWidget {
-  const ForgetPassword({Key? key}) : super(key: key);
+class ForgetPasswordScreen extends StatelessWidget {
+  const ForgetPasswordScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

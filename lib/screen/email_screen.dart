@@ -2,9 +2,9 @@ import 'package:booking_app/styles/colors/colors_view.dart';
 import 'package:booking_app/styles/fonts/fonts_view.dart';
 import 'package:flutter/material.dart';
 
-class LogInEmail extends StatelessWidget {
+class EmailScreen extends StatelessWidget {
   final PageController controller;
-  const LogInEmail({Key? key, required this.controller}) : super(key: key);
+  const EmailScreen({Key? key, required this.controller}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

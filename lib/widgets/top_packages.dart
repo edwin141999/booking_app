@@ -11,6 +11,7 @@ class TopPackages extends StatelessWidget {
     return SizedBox(
       height: 95,
       child: ListView.separated(
+        physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         itemCount: 3,
         separatorBuilder: (BuildContext context, int index) {

@@ -3,14 +3,14 @@ import 'package:booking_app/styles/fonts/fonts_view.dart';
 import 'package:booking_app/widgets/button_back.dart';
 import 'package:flutter/material.dart';
 
-class LogInPassword extends StatefulWidget {
-  const LogInPassword({Key? key}) : super(key: key);
+class PasswordScreen extends StatefulWidget {
+  const PasswordScreen({Key? key}) : super(key: key);
 
   @override
-  State<LogInPassword> createState() => _LogInPasswordState();
+  State<PasswordScreen> createState() => _PasswordScreenState();
 }
 
-class _LogInPasswordState extends State<LogInPassword> {
+class _PasswordScreenState extends State<PasswordScreen> {
   bool visiblePass = false;
 
   @override
