@@ -2,7 +2,8 @@ import 'package:booking_app/styles/colors/colors_view.dart';
 import 'package:booking_app/styles/fonts/fonts_view.dart';
 import 'package:booking_app/widgets/card_package.dart';
 import 'package:booking_app/widgets/container_image.dart';
-import 'package:booking_app/widgets/top_package.dart';
+import 'package:booking_app/widgets/packages.dart';
+import 'package:booking_app/widgets/top_packages.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -106,19 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
               const SizedBox(height: 20),
-              SizedBox(
-                height: 240,
-                child: ListView.separated(
-                  itemCount: 3,
-                  scrollDirection: Axis.horizontal,
-                  separatorBuilder: (BuildContext context, int index) {
-                    return const SizedBox(width: 25);
-                  },
-                  itemBuilder: (BuildContext context, int index) {
-                    return const CardPackage(width: 220);
-                  },
-                ),
-              ),
+              const Packages(),
               // POPULAR PACKAGES
               const SizedBox(height: 20),
               Row(
@@ -192,19 +181,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
               const SizedBox(height: 20),
-              SizedBox(
-                height: 95,
-                child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 3,
-                  separatorBuilder: (BuildContext context, int index) {
-                    return const SizedBox(width: 20);
-                  },
-                  itemBuilder: (BuildContext context, int index) {
-                    return const TopPackage();
-                  },
-                ),
-              ),
+              const TopPackages(),
               const SizedBox(height: 30)
             ],
           ),

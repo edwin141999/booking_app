@@ -1,8 +1,8 @@
 import 'package:booking_app/styles/fonts/fonts_view.dart';
 import 'package:flutter/material.dart';
 
-class TopPackage extends StatelessWidget {
-  const TopPackage({
+class CardTopPackage extends StatelessWidget {
+  const CardTopPackage({
     Key? key,
   }) : super(key: key);
 

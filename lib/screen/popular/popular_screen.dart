@@ -26,10 +26,7 @@ class PopularScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'Popular Packages',
-              style: FontSelect.kTitle26,
-            ),
+            const Text('Popular Packages', style: FontSelect.kTitle26),
             const SizedBox(height: 5),
             Row(
               children: [
@@ -41,17 +38,15 @@ class PopularScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 20),
-            SingleChildScrollView(
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height * .745,
-                child: ListView.separated(
-                  itemCount: 5,
-                  separatorBuilder: (BuildContext context, int index) =>
-                      const SizedBox(height: 10),
-                  itemBuilder: (BuildContext context, int index) {
-                    return const CardPackage(width: double.infinity);
-                  },
-                ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * .745,
+              child: ListView.separated(
+                itemCount: 5,
+                separatorBuilder: (BuildContext context, int index) =>
+                    const SizedBox(height: 10),
+                itemBuilder: (BuildContext context, int index) {
+                  return const CardPackage(width: double.infinity);
+                },
               ),
             ),
           ],
