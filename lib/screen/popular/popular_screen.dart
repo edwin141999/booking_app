@@ -1,7 +1,7 @@
 import 'package:booking_app/styles/fonts/fonts_view.dart';
-import 'package:booking_app/widget/button_back.dart';
-import 'package:booking_app/widget/card_package.dart';
-import 'package:booking_app/widget/container_image.dart';
+import 'package:booking_app/widgets/button_back.dart';
+import 'package:booking_app/widgets/card_package.dart';
+import 'package:booking_app/widgets/container_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 

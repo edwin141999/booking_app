@@ -1,8 +1,8 @@
 import 'package:booking_app/styles/colors/colors_view.dart';
 import 'package:booking_app/styles/fonts/fonts_view.dart';
-import 'package:booking_app/widget/card_package.dart';
-import 'package:booking_app/widget/container_image.dart';
-import 'package:booking_app/widget/top_package.dart';
+import 'package:booking_app/widgets/card_package.dart';
+import 'package:booking_app/widgets/container_image.dart';
+import 'package:booking_app/widgets/top_package.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -13,7 +13,7 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
+class _HomeScreenState extends State<HomeScreen> {
   var categories = ['Packages', 'Flights', 'Places', 'Hotels'];
   int index = 0;
   final PageController _pageController = PageController(initialPage: 0);
@@ -127,7 +127,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                   const Spacer(),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, '/popular',arguments: userData);
+                      Navigator.pushNamed(context, '/popular',
+                          arguments: userData);
                     },
                     child: Text('See all',
                         style: FontSelect.kSubtitle18.copyWith(
