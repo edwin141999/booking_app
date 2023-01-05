@@ -1,5 +1,6 @@
 import 'package:booking_app/models/include_model.dart';
 import 'package:booking_app/styles/fonts/fonts_view.dart';
+import 'package:booking_app/widgets/flybottom.dart';
 import 'package:flutter/material.dart';
 
 class Include extends StatelessWidget {
@@ -23,10 +24,32 @@ class Include extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) {
                   return Column(
                     children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.grey[200],
-                        child: Icon(includeList[index].icon,
-                            color: Colors.black, size: 20),
+                      InkWell(
+                        onTap: () {
+                          (index == 0)
+                              ? showModalBottomSheet<void>(
+                                  context: context,
+                                  shape: const RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(30),
+                                      topRight: Radius.circular(30),
+                                    ),
+                                  ),
+                                  backgroundColor: Colors.white,
+                                  builder: (BuildContext context) {
+                                    return const FlyBottom();
+                                    // return Container();
+                                  },
+                                )
+                              : (index == 1)
+                                  ? print('hola2')
+                                  : print('adios');
+                        },
+                        child: CircleAvatar(
+                          backgroundColor: Colors.grey[200],
+                          child: Icon(includeList[index].icon,
+                              color: Colors.black, size: 20),
+                        ),
                       ),
                       const SizedBox(height: 10),
                       Text(includeList[index].text, style: FontSelect.kBody16)
