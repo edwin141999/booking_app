@@ -1,4 +1,6 @@
 import 'package:booking_app/screen/info_playa.dart';
+import 'package:booking_app/styles/colors/colors_view.dart';
+import 'package:booking_app/widgets/total_cost.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -8,27 +10,40 @@ class PackageDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Stack(
-          children: [
-            const FondoPlaya(),
-            const InfoPlaya(),
-            Scaffold(
+      body: Stack(
+        children: [
+          const FondoPlaya(),
+          Scaffold(
+            backgroundColor: Colors.transparent,
+            appBar: AppBar(
               backgroundColor: Colors.transparent,
-              appBar: AppBar(
-                backgroundColor: Colors.transparent,
-                elevation: 0,
-                leading: IconButton(
+              elevation: 0,
+              automaticallyImplyLeading: false,
+              title: CircleAvatar(
+                backgroundColor: Colors.white,
+                child: IconButton(
                   onPressed: () => Navigator.pop(context),
-                  icon: const Icon(Icons.arrow_back_ios),
+                  icon: const Icon(Icons.arrow_back_ios, color: Colors.black),
+                  padding: const EdgeInsets.only(left: 10),
                 ),
-                actions: const [
-                  Center(child: FaIcon(FontAwesomeIcons.bookmark))
-                ],
               ),
+              actions: const [
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Center(
+                    child: CircleAvatar(
+                      backgroundColor: Colors.white,
+                      child: FaIcon(FontAwesomeIcons.bookmark,
+                          color: ColorSelect.kColorSecondary),
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+          const InfoPlaya(),
+          const TotalCost()
+        ],
       ),
     );
   }

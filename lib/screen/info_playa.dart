@@ -1,29 +1,27 @@
 import 'package:booking_app/styles/fonts/fonts_view.dart';
 import 'package:booking_app/widgets/about.dart';
+import 'package:booking_app/widgets/include.dart';
 import 'package:booking_app/widgets/point_check.dart';
 import 'package:flutter/material.dart';
 
 class InfoPlaya extends StatelessWidget {
-  const InfoPlaya({
-    Key? key,
-  }) : super(key: key);
+  const InfoPlaya({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.bottomCenter,
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.6,
+        height: MediaQuery.of(context).size.height * 0.7,
         width: double.infinity,
         decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30),
-            topRight: Radius.circular(30),
-          ),
+              topLeft: Radius.circular(30), topRight: Radius.circular(30)),
         ),
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: ListView(
+          physics: const BouncingScrollPhysics(),
           children: [
             // TITLE
             Text(
@@ -36,17 +34,25 @@ class InfoPlaya extends StatelessWidget {
               'Italy, Manarola',
               style: FontSelect.kSubtitle16.copyWith(fontSize: 18),
             ),
-            const SizedBox(height: 30),
             // POINTS AND CHECK
+            const SizedBox(height: 30),
             const PointCheck(),
             // ABOUT
             const SizedBox(height: 30),
             const About(),
             // INCLUDE
-
-            // MAP?
-
-            // TOTAL COST
+            const SizedBox(height: 30),
+            const Text("What's included", style: FontSelect.kTitle24),
+            const SizedBox(height: 20),
+            const Include(),
+            const SizedBox(height: 20),
+            // MAP & TOTAL COST
+            ClipRRect(
+              borderRadius: BorderRadius.circular(30),
+              child: Image.asset('assets/images/maps.jpg',
+                  height: 180, width: double.infinity, fit: BoxFit.cover),
+            ),
+            const SizedBox(height: 120),
           ],
         ),
       ),

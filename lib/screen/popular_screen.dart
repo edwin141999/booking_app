@@ -1,3 +1,4 @@
+import 'package:booking_app/models/card_package_model.dart';
 import 'package:booking_app/styles/fonts/fonts_view.dart';
 import 'package:booking_app/widgets/button_back.dart';
 import 'package:booking_app/widgets/card_package.dart';
@@ -41,15 +42,19 @@ class PopularScreen extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * .745,
               child: ListView.separated(
-                itemCount: 5,
+                physics: const BouncingScrollPhysics(),
+                itemCount: packages.length,
                 separatorBuilder: (BuildContext context, int index) =>
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 20),
                 itemBuilder: (BuildContext context, int index) {
-                  return GestureDetector(
+                  return InkWell(
                     onTap: () {
                       Navigator.pushNamed(context, '/details');
                     },
-                    child: const CardPackage(width: double.infinity),
+                    child: CardPackage(
+                        width: double.infinity,
+                        image: packages[index].image,
+                        place: packages[index].place),
                   );
                 },
               ),

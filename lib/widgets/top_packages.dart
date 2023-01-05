@@ -1,3 +1,4 @@
+import 'package:booking_app/models/card_top_package_model.dart';
 import 'package:booking_app/widgets/card_top_package.dart';
 import 'package:flutter/material.dart';
 
@@ -13,12 +14,16 @@ class TopPackages extends StatelessWidget {
       child: ListView.separated(
         physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
-        itemCount: 3,
+        itemCount: topPackages.length,
         separatorBuilder: (BuildContext context, int index) {
           return const SizedBox(width: 20);
         },
         itemBuilder: (BuildContext context, int index) {
-          return const CardTopPackage();
+          return CardTopPackage(
+            image: topPackages[index].image,
+            city: topPackages[index].city,
+            country: topPackages[index].country,
+          );
         },
       ),
     );

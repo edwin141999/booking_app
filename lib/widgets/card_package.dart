@@ -1,3 +1,4 @@
+import 'package:booking_app/styles/colors/colors_view.dart';
 import 'package:booking_app/styles/fonts/fonts_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -7,10 +8,13 @@ class CardPackage extends StatelessWidget {
       {super.key,
       required this.width,
       this.description = '',
-      this.save = false});
+      this.save = false,
+      required this.image,
+      required this.place});
   final double width;
   final String description;
   final bool save;
+  final String image, place;
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +23,7 @@ class CardPackage extends StatelessWidget {
       width: width,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
-        image: const DecorationImage(
-            image: NetworkImage(
-                'https://www.cinqueterre.eu.com/images/stories/web/manarola/manarola-cinque-terre-1200.jpg'),
-            fit: BoxFit.cover),
+        image: DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
       ),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -52,7 +53,8 @@ class CardPackage extends StatelessWidget {
                     color: Colors.white),
                 child: Center(
                   child: FaIcon(FontAwesomeIcons.bookmark,
-                      color: save ? Colors.red : Colors.black, size: 18),
+                      color: save ? ColorSelect.kColorSecondary : Colors.black,
+                      size: 18),
                 ),
               ),
             ),
@@ -82,7 +84,7 @@ class CardPackage extends StatelessWidget {
             Align(
               alignment: Alignment.bottomLeft,
               child: Text(
-                'Italy Manarola',
+                place,
                 style: FontSelect.kTitle45
                     .copyWith(color: Colors.white, fontSize: 28),
                 textAlign: TextAlign.left,

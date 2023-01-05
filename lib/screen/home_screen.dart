@@ -1,3 +1,4 @@
+import 'package:booking_app/models/card_package_model.dart';
 import 'package:booking_app/styles/colors/colors_view.dart';
 import 'package:booking_app/styles/fonts/fonts_view.dart';
 import 'package:booking_app/widgets/card_package.dart';
@@ -18,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   var categories = ['Packages', 'Flights', 'Places', 'Hotels'];
   int index = 0;
   final PageController _pageController = PageController(initialPage: 0);
-  int activePage = 0;
+  int activePage = 3;
   final ScrollController _scrollController =
       ScrollController(initialScrollOffset: 0);
   int activeScroll = 0;
@@ -76,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Text(categories[index],
                                 style: FontSelect.kSubtitle16.copyWith(
                                   color: activeScroll == index
-                                      ? Colors.red
+                                      ? ColorSelect.kColorSecondary
                                       : ColorSelect.kTextSecondary,
                                 )),
                           ),
@@ -86,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             height: 7,
                             decoration: BoxDecoration(
                               color: activeScroll == index
-                                  ? Colors.red
+                                  ? ColorSelect.kColorSecondary
                                   : Colors.transparent,
                               borderRadius:
                                   const BorderRadius.all(Radius.circular(50)),
@@ -136,7 +137,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 200,
                 child: PageView.builder(
                   physics: const BouncingScrollPhysics(),
-                  itemCount: 3,
+                  itemCount: reversePackage.length,
                   pageSnapping: true,
                   controller: _pageController,
                   onPageChanged: (int index) {
@@ -150,10 +151,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       duration: const Duration(milliseconds: 500),
                       curve: Curves.easeOutCubic,
                       margin: EdgeInsets.symmetric(horizontal: margin),
-                      child: const CardPackage(
+                      child: CardPackage(
                         width: double.infinity,
                         description: '2 days 3 night full package',
                         save: true,
+                        image: reversePackage[index].image,
+                        place: reversePackage[index].place,
                       ),
                     );
                   },
@@ -162,7 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(3, (index) {
+                children: List.generate(reversePackage.length, (index) {
                   return Container(
                     margin: const EdgeInsets.all(3),
                     width: activePage == index ? 30 : 10,
