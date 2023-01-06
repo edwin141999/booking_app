@@ -34,8 +34,9 @@ dependencies:
   firebase_core: ^2.4.0
   flutter:
     sdk: flutter
-  google_sign_in: ^5.4.2
+  flutter_dotenv: ^5.0.2
   font_awesome_flutter: ^10.3.0
+  google_sign_in: ^5.4.2
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -57,6 +58,7 @@ flutter:
     - assets/places/
     - assets/country/
     - assets/details/
+    - .env
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

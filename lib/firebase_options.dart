@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -43,8 +44,8 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyA349k3jk-pGSgN_6JHTP74tNRtqjX8jeU',
+  static FirebaseOptions web = FirebaseOptions(
+    apiKey: dotenv.env['API_KEY_WEB']!,
     appId: '1:1048617371757:web:b4a179f3dbdc4f6ba31764',
     messagingSenderId: '1048617371757',
     projectId: 'booking-app-93a7a',
@@ -52,16 +53,16 @@ class DefaultFirebaseOptions {
     storageBucket: 'booking-app-93a7a.appspot.com',
   );
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBnrdeSLt5FpKo7Fi7cjzZ0yK3FVKOYX_s',
+  static FirebaseOptions android = FirebaseOptions(
+    apiKey: dotenv.env['API_KEY_ANDROID']!,
     appId: '1:1048617371757:android:0238ce923a32b91ea31764',
     messagingSenderId: '1048617371757',
     projectId: 'booking-app-93a7a',
     storageBucket: 'booking-app-93a7a.appspot.com',
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDh1OoB1RqlE0hcGkBa9TBvsHEnJq7NSoQ',
+  static  FirebaseOptions ios = FirebaseOptions(
+    apiKey: dotenv.env['API_KEY_IOS']!,
     appId: '1:1048617371757:ios:d734be66e7b10f27a31764',
     messagingSenderId: '1048617371757',
     projectId: 'booking-app-93a7a',
@@ -70,8 +71,8 @@ class DefaultFirebaseOptions {
     iosBundleId: 'com.example.bookingApp',
   );
 
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDh1OoB1RqlE0hcGkBa9TBvsHEnJq7NSoQ',
+  static  FirebaseOptions macos = FirebaseOptions(
+    apiKey: dotenv.env['API_KEY_MACOS']!,
     appId: '1:1048617371757:ios:d734be66e7b10f27a31764',
     messagingSenderId: '1048617371757',
     projectId: 'booking-app-93a7a',
