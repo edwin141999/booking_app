@@ -31,10 +31,8 @@ class Include extends StatelessWidget {
                               ? showModalBottomSheet<void>(
                                   context: context,
                                   shape: const RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(30),
-                                      topRight: Radius.circular(30),
-                                    ),
+                                    borderRadius: BorderRadius.vertical(
+                                        top: Radius.circular(40)),
                                   ),
                                   isScrollControlled: true,
                                   backgroundColor: Colors.white,
@@ -50,10 +48,8 @@ class Include extends StatelessWidget {
                                   ? showModalBottomSheet<void>(
                                       context: context,
                                       shape: const RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(30),
-                                          topRight: Radius.circular(30),
-                                        ),
+                                        borderRadius: BorderRadius.vertical(
+                                            top: Radius.circular(40)),
                                       ),
                                       backgroundColor: Colors.white,
                                       isScrollControlled: true,

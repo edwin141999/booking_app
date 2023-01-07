@@ -1,5 +1,6 @@
 import 'package:booking_app/styles/colors/colors_view.dart';
 import 'package:booking_app/styles/fonts/fonts_view.dart';
+import 'package:booking_app/widgets/check_availability.dart';
 import 'package:flutter/material.dart';
 
 class PointCheck extends StatelessWidget {
@@ -32,7 +33,22 @@ class PointCheck extends StatelessWidget {
         const Text('4.5', style: FontSelect.kSubtitle16),
         const Spacer(),
         OutlinedButton(
-          onPressed: () {},
+          onPressed: () {
+            showModalBottomSheet<void>(
+              context: context,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(top: Radius.circular(40)),
+              ),
+              isScrollControlled: true,
+              backgroundColor: Colors.white,
+              builder: (BuildContext context) {
+                return SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.85,
+                  child: const CheckAvailability(),
+                );
+              },
+            );
+          },
           style: OutlinedButton.styleFrom(
             backgroundColor: ColorSelect.kColorPrimary,
             foregroundColor: Colors.white,

@@ -1,5 +1,6 @@
 import 'package:booking_app/models/hotel_details_model.dart';
 import 'package:booking_app/styles/fonts/fonts_view.dart';
+import 'package:booking_app/widgets/title_modal.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -9,35 +10,13 @@ class HotelDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: const BorderRadius.only(
-        topLeft: Radius.circular(30),
-        topRight: Radius.circular(30),
-      ),
+      borderRadius: const BorderRadius.vertical(top: Radius.circular(40)),
       child: Padding(
         padding: const EdgeInsets.only(top: 10),
         child: Scaffold(
-          appBar: AppBar(
-            title: const Text('Hotel Details', style: FontSelect.kTitle26),
-            centerTitle: true,
-            backgroundColor: Colors.white,
-            foregroundColor: Colors.black,
-            automaticallyImplyLeading: false,
-            elevation: 0,
-            actions: [
-              Padding(
-                padding: const EdgeInsets.only(right: 20),
-                child: CircleAvatar(
-                  backgroundColor: Colors.grey[200],
-                  foregroundColor: Colors.black,
-                  child: IconButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      icon: const Icon(FontAwesomeIcons.xmark)),
-                ),
-              ),
-            ],
-          ),
+          appBar: const PreferredSize(
+              preferredSize: Size.fromHeight(50),
+              child: TitleModal(title: 'Hotel Details')),
           backgroundColor: Colors.white,
           body: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
