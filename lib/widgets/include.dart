@@ -1,6 +1,7 @@
 import 'package:booking_app/models/include_model.dart';
 import 'package:booking_app/styles/fonts/fonts_view.dart';
-import 'package:booking_app/widgets/flybottom.dart';
+import 'package:booking_app/widgets/fly_details.dart';
+import 'package:booking_app/widgets/hotel_details.dart';
 import 'package:flutter/material.dart';
 
 class Include extends StatelessWidget {
@@ -35,15 +36,37 @@ class Include extends StatelessWidget {
                                       topRight: Radius.circular(30),
                                     ),
                                   ),
+                                  isScrollControlled: true,
                                   backgroundColor: Colors.white,
                                   builder: (BuildContext context) {
-                                    return const FlyBottom();
-                                    // return Container();
+                                    return SizedBox(
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                0.5,
+                                        child: const FlyDetails());
                                   },
                                 )
                               : (index == 1)
-                                  ? print('hola2')
-                                  : print('adios');
+                                  ? showModalBottomSheet<void>(
+                                      context: context,
+                                      shape: const RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(30),
+                                          topRight: Radius.circular(30),
+                                        ),
+                                      ),
+                                      backgroundColor: Colors.white,
+                                      isScrollControlled: true,
+                                      builder: (BuildContext context) {
+                                        return SizedBox(
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.55,
+                                            child: const HotelDetails());
+                                      },
+                                    )
+                                  : null;
                         },
                         child: CircleAvatar(
                           backgroundColor: Colors.grey[200],

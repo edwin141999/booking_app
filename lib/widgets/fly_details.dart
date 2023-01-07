@@ -1,11 +1,11 @@
-import 'package:booking_app/models/flybottom_model.dart';
+import 'package:booking_app/models/fly_details_model.dart';
 import 'package:booking_app/styles/colors/colors_view.dart';
 import 'package:booking_app/styles/fonts/fonts_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class FlyBottom extends StatelessWidget {
-  const FlyBottom({Key? key}) : super(key: key);
+class FlyDetails extends StatelessWidget {
+  const FlyDetails({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,9 @@ class FlyBottom extends StatelessWidget {
                   backgroundColor: Colors.grey[200],
                   foregroundColor: Colors.black,
                   child: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     icon: const Icon(FontAwesomeIcons.xmark),
                   ),
                 ),
@@ -42,7 +44,7 @@ class FlyBottom extends StatelessWidget {
           body: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
             child: Column(
-              children: List.generate(flyBottomList.length, (index) {
+              children: List.generate(flyDetailsList.length, (index) {
                 return Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Card(
@@ -59,7 +61,7 @@ class FlyBottom extends StatelessWidget {
                       child: Column(
                         children: [
                           Text(
-                            '${flyBottomList[index].porcent}% on time',
+                            '${flyDetailsList[index].porcent}% on time',
                             style: FontSelect.kBody16.copyWith(
                                 color: ColorSelect.kColorPrimary,
                                 fontWeight: FontWeight.w400),
@@ -71,7 +73,7 @@ class FlyBottom extends StatelessWidget {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(flyBottomList[index].begin,
+                                  Text(flyDetailsList[index].begin,
                                       style: FontSelect.kBody18),
                                   const Text('Larkow',
                                       style: FontSelect.kSubtitle16)
@@ -87,7 +89,7 @@ class FlyBottom extends StatelessWidget {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(flyBottomList[index].finish,
+                                  Text(flyDetailsList[index].finish,
                                       style: FontSelect.kBody18),
                                   const Text('Goa',
                                       style: FontSelect.kSubtitle16)

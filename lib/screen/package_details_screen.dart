@@ -1,5 +1,5 @@
-import 'package:booking_app/screen/info_playa.dart';
 import 'package:booking_app/styles/colors/colors_view.dart';
+import 'package:booking_app/widgets/info_playa.dart';
 import 'package:booking_app/widgets/total_cost.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
