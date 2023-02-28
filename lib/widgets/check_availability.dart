@@ -1,3 +1,4 @@
+import 'package:booking_app/widgets/check_next.dart';
 import 'package:booking_app/widgets/title_modal.dart';
 import 'package:flutter/material.dart';
 
@@ -7,15 +8,18 @@ class CheckAvailability extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ClipRRect(
-      borderRadius: BorderRadius.vertical(top: Radius.circular(40)),
+    return ClipRRect(
+      borderRadius: const BorderRadius.vertical(top: Radius.circular(40)),
       child: Padding(
-        padding: EdgeInsets.only(top: 10),
+        padding: const EdgeInsets.only(top: 10),
         child: Scaffold(
-          appBar: PreferredSize(
+          appBar: const PreferredSize(
               preferredSize: Size.fromHeight(50),
               child: TitleModal(title: 'Check Availibity')),
           backgroundColor: Colors.white,
+          body: Stack(
+            children: const [CheckNext()],
+          ),
         ),
       ),
     );
