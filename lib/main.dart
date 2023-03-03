@@ -4,6 +4,7 @@ import 'package:booking_app/screen/forget_password_screen.dart';
 import 'package:booking_app/screen/home_screen.dart';
 import 'package:booking_app/screen/package_details_screen.dart';
 import 'package:booking_app/screen/password_screen.dart';
+import 'package:booking_app/screen/payment_screen.dart';
 import 'package:booking_app/screen/popular_screen.dart';
 import 'package:booking_app/screen/sign_up_screen.dart';
 import 'package:booking_app/screen/verification_screen.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
           '/popular': (context) => const PopularScreen(),
           '/details': (context) => const PackageDetailsScreen(),
           '/confirmation': (context) => const ConfirmationScreen(),
+          '/payment': (context) => const PaymentScreen(),
         });
   }
 }
