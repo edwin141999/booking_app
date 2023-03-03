@@ -1,5 +1,5 @@
-import 'package:booking_app/styles/colors/colors_view.dart';
 import 'package:booking_app/styles/fonts/fonts_view.dart';
+import 'package:booking_app/widgets/btn_continue.dart';
 import 'package:booking_app/widgets/button_back.dart';
 import 'package:flutter/material.dart';
 
@@ -22,38 +22,28 @@ class ForgetPasswordScreen extends StatelessWidget {
           width: double.infinity,
           height: MediaQuery.of(context).size.height * .45,
           child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Column(
-                  children: const [
-                    Text("Forget Password?", style: FontSelect.kTitle26),
-                    Text("Enter your email address",
-                        style: FontSelect.kSubtitle16),
-                  ],
-                ),
-                const TextField(
-                  decoration: InputDecoration(hintText: 'Your Email'),
-                  style: FontSelect.kSubtitle18,
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.8,
-                  height: 55,
-                  child: OutlinedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/verification');
-                    },
-                    style: OutlinedButton.styleFrom(
-                        backgroundColor: ColorSelect.kColorPrimary,
-                        side:
-                            const BorderSide(color: ColorSelect.kColorPrimary),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50))),
-                    child:
-                        const Text('Send', style: FontSelect.kBtnText20White),
-                  ),
-                ),
-              ]),
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Column(
+                children: const [
+                  Text("Forget Password?", style: FontSelect.kTitle26),
+                  Text("Enter your email address",
+                      style: FontSelect.kSubtitle16),
+                ],
+              ),
+              const TextField(
+                decoration: InputDecoration(hintText: 'Your Email'),
+                style: FontSelect.kSubtitle18,
+                textAlign: TextAlign.center,
+              ),
+              BtnContinue(
+                btnText: 'Send',
+                onPressed: () {
+                  Navigator.pushNamed(context, '/verification');
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

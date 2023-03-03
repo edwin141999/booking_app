@@ -1,5 +1,6 @@
 import 'package:booking_app/styles/colors/colors_view.dart';
 import 'package:booking_app/styles/fonts/fonts_view.dart';
+import 'package:booking_app/widgets/btn_continue.dart';
 import 'package:booking_app/widgets/button_back.dart';
 import 'package:flutter/material.dart';
 
@@ -54,21 +55,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                       labelStyle: FontSelect.kSubtitle16,
                     ),
                     style: FontSelect.kSubtitle18),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.8,
-                  height: 55,
-                  child: OutlinedButton(
-                    onPressed: () {},
-                    style: OutlinedButton.styleFrom(
-                        backgroundColor: ColorSelect.kColorPrimary,
-                        side:
-                            const BorderSide(color: ColorSelect.kColorPrimary),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50))),
-                    child: const Text('Continue',
-                        style: FontSelect.kBtnText20White),
-                  ),
-                ),
+                BtnContinue(btnText: 'Continue', onPressed: () {}),
                 GestureDetector(
                   onTap: () {
                     Navigator.pushNamed(context, '/forgetpassword');

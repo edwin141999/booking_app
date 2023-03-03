@@ -1,5 +1,5 @@
-import 'package:booking_app/styles/colors/colors_view.dart';
 import 'package:booking_app/styles/fonts/fonts_view.dart';
+import 'package:booking_app/widgets/btn_continue.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -66,24 +66,15 @@ class ConfirmationScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              // const SizedBox(height: 30),
               Center(
-                child: ElevatedButton(
+                child: BtnContinue(
+                  btnText: 'Continue',
                   onPressed: () {
                     Navigator.pushNamed(context, '/payment',
                         arguments: userData);
                   },
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30)),
-                    backgroundColor: ColorSelect.kColorPrimary,
-                    minimumSize: const Size(330, 50),
-                    elevation: 0,
-                    textStyle: FontSelect.kBtnText20White,
-                  ),
-                  child: const Text('Continue'),
                 ),
-              ),
+              )
             ],
           ),
         ),

@@ -1,5 +1,5 @@
-import 'package:booking_app/styles/colors/colors_view.dart';
 import 'package:booking_app/styles/fonts/fonts_view.dart';
+import 'package:booking_app/widgets/btn_continue.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +13,7 @@ class CheckNext extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       child: Container(
         width: double.infinity,
-        height: 135,
+        height: 140,
         padding: const EdgeInsets.all(20),
         decoration: const BoxDecoration(
           color: Colors.white,
@@ -54,21 +54,13 @@ class CheckNext extends StatelessWidget {
                 ],
               ),
             ),
-            ElevatedButton(
+            BtnContinue(
+              btnText: 'Next',
               onPressed: () {
                 Navigator.pushNamed(context, '/confirmation',
                     arguments: userData);
               },
-              style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30)),
-                backgroundColor: ColorSelect.kColorPrimary,
-                minimumSize: const Size(330, 50),
-                elevation: 0,
-                textStyle: FontSelect.kBtnText20White,
-              ),
-              child: const Text('Next'),
-            ),
+            )
           ],
         ),
       ),

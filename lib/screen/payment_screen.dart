@@ -1,5 +1,5 @@
-import 'package:booking_app/styles/colors/colors_view.dart';
 import 'package:booking_app/styles/fonts/fonts_view.dart';
+import 'package:booking_app/widgets/btn_continue.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -92,23 +92,13 @@ class PaymentScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 50),
-              Center(
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/congrats',
-                        arguments: userData);
-                  },
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30)),
-                    backgroundColor: ColorSelect.kColorPrimary,
-                    minimumSize: const Size(330, 50),
-                    elevation: 0,
-                    textStyle: FontSelect.kBtnText20White,
-                  ),
-                  child: const Text('Pay \$1,400'),
-                ),
-              ),
+              BtnContinue(
+                btnText: 'Pay \$1,400',
+                onPressed: () {
+                  Navigator.pushNamed(context, '/congrats',
+                      arguments: userData);
+                },
+              )
             ],
           ),
         ),
