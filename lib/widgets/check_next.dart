@@ -1,9 +1,11 @@
 import 'package:booking_app/styles/colors/colors_view.dart';
 import 'package:booking_app/styles/fonts/fonts_view.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class CheckNext extends StatelessWidget {
-  const CheckNext({Key? key}) : super(key: key);
+  const CheckNext({Key? key, required this.userData}) : super(key: key);
+  final UserCredential userData;
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +56,8 @@ class CheckNext extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/confirmation');
+                Navigator.pushNamed(context, '/confirmation',
+                    arguments: userData);
               },
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(

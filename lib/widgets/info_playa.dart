@@ -2,10 +2,12 @@ import 'package:booking_app/styles/fonts/fonts_view.dart';
 import 'package:booking_app/widgets/about.dart';
 import 'package:booking_app/widgets/include.dart';
 import 'package:booking_app/widgets/point_check.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class InfoPlaya extends StatelessWidget {
-  const InfoPlaya({Key? key}) : super(key: key);
+  const InfoPlaya({Key? key, required this.userData}) : super(key: key);
+  final UserCredential userData;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +40,7 @@ class InfoPlaya extends StatelessWidget {
               ),
               // // POINTS AND CHECK
               const SizedBox(height: 30),
-              const PointCheck(),
+              PointCheck(userData: userData),
               // // ABOUT
               const SizedBox(height: 30),
               const About(),

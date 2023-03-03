@@ -1,6 +1,7 @@
 import 'package:booking_app/styles/colors/colors_view.dart';
 import 'package:booking_app/widgets/info_playa.dart';
 import 'package:booking_app/widgets/total_cost.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -9,6 +10,8 @@ class PackageDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final arguments = ModalRoute.of(context)!.settings.arguments;
+    final userData = arguments as UserCredential;
     return Scaffold(
       body: Stack(
         children: [
@@ -41,7 +44,7 @@ class PackageDetailsScreen extends StatelessWidget {
               ],
             ),
           ),
-          const InfoPlaya(),
+          InfoPlaya(userData: userData),
           const TotalCost()
         ],
       ),

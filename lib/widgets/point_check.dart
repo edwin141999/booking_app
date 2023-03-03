@@ -1,10 +1,12 @@
 import 'package:booking_app/styles/colors/colors_view.dart';
 import 'package:booking_app/styles/fonts/fonts_view.dart';
 import 'package:booking_app/widgets/check_availability.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class PointCheck extends StatelessWidget {
-  const PointCheck({Key? key}) : super(key: key);
+  const PointCheck({Key? key, required this.userData}) : super(key: key);
+  final UserCredential userData;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +46,7 @@ class PointCheck extends StatelessWidget {
               builder: (BuildContext context) {
                 return SizedBox(
                   height: MediaQuery.of(context).size.height * 0.85,
-                  child: const CheckAvailability(),
+                  child: CheckAvailability(userData: userData),
                 );
               },
             );

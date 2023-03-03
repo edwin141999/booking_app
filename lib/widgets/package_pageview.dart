@@ -7,16 +7,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class PackagePageView extends StatefulWidget {
-  const PackagePageView({
-    Key? key,
-    required this.userData,
-    // required PageController pageController,
-    // required this.activePage
-  }) : super(key: key);
-
+  const PackagePageView({Key? key, required this.userData}) : super(key: key);
   final UserCredential userData;
-  // final PageController _pageController;
-  // final int activePage;
 
   @override
   State<PackagePageView> createState() => _PackagePageViewState();
